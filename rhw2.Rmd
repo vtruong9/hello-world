@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r HW2_VT, echo=TRUE}
+
+setwd("C:/Users/Vi/Desktop/AdvancedBiologicalStatistics")
+
+library(dplyr)
+
+zfish <- read.table ('zfish_diet_IA.tsv', fill=T, header=T, sep = '\t')
+
+hist(zfish$SL)
+hist(zfish$Weight)
+
+boxplot(zfish$Weight)
+
+heads(zfish)
+
+#There are outliers in this shit
+#dixon's q test to exclude
+#Fuck this
+
+
+# independent 2-group t-test
+t.test(y~x) # where y is numeric and x is a binary factor
+
+```
+
+```{r HW2GARBAGE}
+
+colnames(zfish) <- c(toString(zfish[1,1]), toString(zfish[1,2]), toString(zfish[1,3]), toString(zfish[1,4])) 
+
+```
+
